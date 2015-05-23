@@ -1,15 +1,19 @@
 # Installing JDK 
+# Pull base image.
 FROM ubuntu:14.04
-MAINTAINER Arun Nair <arun.b.nair@gmail.com>
+MAINTAINER Arun Nair <arun.b.nair@accenture.com>
 
 # Install Java.
 RUN \
   apt-get update && \
   apt-get install -y default-jdk && \
   rm -rf /var/lib/apt/lists/*
-# If you re-use this dockerfile for a specific implementation
-# Comment out the following lines
+
+# Define working directory.
 # WORKDIR /data
+
+# Define commonly used JAVA_HOME variable
 # ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
+# Define default command.
 CMD ["bash"]
